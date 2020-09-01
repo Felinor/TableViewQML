@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>QML/DelegateHeader.qml</file>
+        <file>QML/DelegateItem.qml</file>
+        <file>QML/DelegateRow.qml</file>
+        <file>QML/main.qml</file>
+        <file>QML/ProxyModel.qml</file>
+        <file>QML/TableNotice.qml</file>
+    </qresource>
+</RCC>
