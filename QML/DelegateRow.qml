@@ -54,10 +54,12 @@ ItemDelegate {
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
         acceptedButtons: Qt.LeftButton | Qt.RightButton
-        onHoveredChanged: tableView.currentRow = styleData.row
         onClicked: {
             if (mouse.button === Qt.LeftButton) {
                 tableView.currentGradient = backgroundRect.gradient
+                console.log("Proxy index " + proxyModel.getIndex(styleData.row))
+                console.log("Row delegate index " + styleData.row)
+                console.log(proxyModel.getIndex(styleData.row) === styleData.row)
             }
             else {
                 hideMenu.hideMenu.popup()

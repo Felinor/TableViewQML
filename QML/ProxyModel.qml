@@ -3,7 +3,6 @@ import SortFilterProxyModel 1.0
 
  SortFilterProxyModel {
     id: proxyModel
-    property alias proxyModel: proxyModel
 
     source: dataModel.count > 0 ? dataModel : null
 
