@@ -53,7 +53,7 @@ public:
     int count() const;
     Q_INVOKABLE QJSValue get(int index) const;
     Q_INVOKABLE void reserve(const int &currentIndex);
-    Q_INVOKABLE QModelIndex getIndex(const int &currentIndex);
+    Q_INVOKABLE int getIndex(const int &currentIndex);
 
     void classBegin();
     void componentComplete();

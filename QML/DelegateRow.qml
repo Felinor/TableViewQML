@@ -19,10 +19,17 @@ ItemDelegate {
         return gradientNormal
     }
 
+//    function colorNotify(index) {
+//        var key = proxyModel.getIndex(index)
+//        if (key === 0)
+//            return key
+//    }
+
     background: Rectangle {
         id: backgroundRect
         anchors.fill: delegateRow
-        gradient: colorNotify()
+        clip: true
+        gradient: colorNotify() //colorNotify(styleData.row) === 0 ? gradientAttention : gradientNormal
 
         Gradient {
             id: gradientNormal
@@ -53,18 +60,10 @@ ItemDelegate {
         anchors.fill: parent
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
-        acceptedButtons: Qt.LeftButton | Qt.RightButton
         onClicked: {
-            if (mouse.button === Qt.LeftButton) {
-                tableView.currentGradient = backgroundRect.gradient
-                console.log("Proxy index " + proxyModel.getIndex(styleData.row))
+                console.log("Model index " + proxyModel.getIndex(styleData.row))
                 console.log("Row delegate index " + styleData.row)
-                console.log(proxyModel.getIndex(styleData.row) === styleData.row)
-            }
-            else {
-                hideMenu.hideMenu.popup()
-                dataModel.currentKeyRole = proxyModel.get(styleData.row).keyRole
-            }
+                console.log(proxyModel.getIndex(styleData.row) === styleData.row)                        
         }
     }
 }

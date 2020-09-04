@@ -143,12 +143,9 @@ void SortFilterProxyModel::reserve(const int &currentIndex)
     dataModel->reserve(sourceIndex.row());
 }
 
-QModelIndex SortFilterProxyModel::getIndex(const int &currentIndex)
+int SortFilterProxyModel::getIndex(const int &currentIndex)
 {
-    //QModelIndex proxyIndex = index(currentIndex, 0);
-    //QModelIndex sourceIndex = mapToSource(proxyIndex);
-    //return sourceIndex;
-
-    DataModel *dataModel = dynamic_cast<DataModel*>(sourceModel());
-    return dataModel->index(currentIndex);
+    QModelIndex proxyIndex = index(currentIndex, 0);
+    QModelIndex sourceIndex = mapToSource(proxyIndex);
+    return sourceIndex.row();
 }
